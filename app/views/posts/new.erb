@@ -1,7 +1,27 @@
-<%= simple_form_for @post do |f| %>
-  <%= f.input :title %>
-  <%= f.input :image %>
-  <%= f.input :description %>
-  <%= f.input :budget %>
-  <%= f.button :submit %>
-<% end %>
+<div class="form-wrapper">
+  <%= simple_form_for @post, html: { class: 'form-horizontal', multipart: true } do |f| %>
+
+    <div class="form01">
+      <%= f.input :title %>
+    </div>
+
+    <div class="form01">
+      <%= f.input :image %>
+    </div>
+
+<!-- insert form for country here -->
+
+    <div class="form01">
+      <%= f.input :budget %>
+    </div>
+
+    <div class="form01">
+      <%= f.input :description %>
+    </div>
+
+    <div class="form01">
+      <%= f.button :submit, class: 'btn-success' %>
+    </div>
+
+  <% end %>
+</div>

@@ -1,0 +1,17 @@
+<div class="posts-wrapper row">
+
+  <p>TItle: <%= @post.title %></p>
+  <p>Date: <%= @post.created_at %></p>
+  <p><%= link_to (image_tag @post.image.url(:medium)) %></p>
+  <p>Where: @post.country</p>
+  <p>Amount spent: S$ <%= @post.budget %></p>
+  <p>Read more<%= @post.description %></p>
+
+  <!-- cancel and delete functions -->
+  <div>
+  <%= link_to "Back", posts_path %>
+  |
+  <%= link_to "Edit Post", edit_post_path(@post) %>
+  </div>
+
+</div>
