@@ -1,0 +1,9 @@
+<% @posts.each do |post| %>
+  <div class="row">
+    <p><%= post.title %></p>
+    <p><%= link_to (image_tag post.image.url(:medium)), post_path(post) %></p>
+    <p><%= post.description %></p>
+    <p><%= post.budget %></p>
+    <p><%= post.created_at %></p>
+  </div>
+<%end%>
