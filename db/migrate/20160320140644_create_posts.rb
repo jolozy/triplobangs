@@ -4,6 +4,7 @@ class CreatePosts < ActiveRecord::Migration
       t.string :title
       t.text :description
       t.integer :budget
+      t.string :country
 
       t.timestamps null: false
     end

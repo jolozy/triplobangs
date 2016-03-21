@@ -18,6 +18,7 @@ class PostsController < ApplicationController
     flash.now[:alert] = "Your new post could not be created!"
     render :new
     end
+  #insert activity here
   end
 
   #/posts/id shows individual post
@@ -49,7 +50,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:image, :title, :description, :budget)
+    params.require(:post).permit(:image, :title, :description, :budget, :country)
   end
 
 end

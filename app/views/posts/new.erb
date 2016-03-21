@@ -1,6 +1,8 @@
-<div class="form-wrapper">
-  <%= simple_form_for @post, html: { class: 'form-horizontal', multipart: true } do |f| %>
+<h1>NEW LOBANG</h1>
 
+<div class="form-wrapper">
+
+  <%= simple_form_for @post, html: { class: 'form-horizontal', multipart: true } do |f| %>
     <div class="form01">
       <%= f.input :title %>
     </div>
@@ -9,7 +11,9 @@
       <%= f.input :image %>
     </div>
 
-<!-- insert form for country here -->
+    <div class="form01">
+      <%= f.input :country, as: :country %>
+    </div>
 
     <div class="form01">
       <%= f.input :budget %>
@@ -24,4 +28,5 @@
     </div>
 
   <% end %>
+
 </div>
