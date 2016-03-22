@@ -1,5 +1,6 @@
 class Post < ActiveRecord::Base
   has_many :activities
+  belongs_to :user
 
   validates :image, presence: true
   has_attached_file :image, styles: { :medium => "640x" }

@@ -1,15 +1,16 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
-  
+
   #/posts: shows all posts that have been created on 1 page
   def index
-    @posts = Post.all
+    @posts = current_user.posts
     @activity = Activity.all
   end
 
   #/new: form that will accept user inputs
   def new
     @post = Post.new
+    @post.user_id = current_user.id
   end
   #create: clicking of upload button to allow creation of new entry. Redirects to new post
   def create
@@ -17,6 +18,7 @@ class PostsController < ApplicationController
     if @post = Post.create(post_params) #if object creation is true, go on to create Activity
       @activities = Activity.create(:name => @activity, :post_id => @post.id)
       #when creating new Activity, pass 2 methods @activity and @post values into Activity model
+
       flash[:success] = "Your post has been created!"
       redirect_to posts_path
     else
