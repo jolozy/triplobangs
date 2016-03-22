@@ -2,6 +2,7 @@
 
 <% @posts.each do |post| %>
   <div class="row post">
+    <p>Contributor: <%= post.user.username %></p>
     <p>Title: <%= post.title %></p>
     <p>Date: <%= post.created_at.strftime("%d-%m-%Y %H:%M") %></p>
     <p>Where: <%= post.country_name %></p>

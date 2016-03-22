@@ -1,11 +1,19 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, :except => [:explore]
+  before_action :authenticate_user!, :except => [:explore, :search, :search_result]
 
   #/posts: shows all posts that have been created on 1 page
   def index
     @posts = current_user.posts
     # @posts = Post.all
     @activity = Activity.all
+  end
+
+  #simple search
+  def search
+  end
+
+  def search_result
+    @results = Post.search_country(params[:search])
   end
 
   #/new: form that will accept user inputs

@@ -1,6 +1,9 @@
 <h1> hello stranger </h2>
 
+
+
   <% @posts.each do |post| %>
+
     <div class="row post">
       <p>Contributor: <%= post.user.username %></p>
       <p>Title: <%= post.title %></p>
