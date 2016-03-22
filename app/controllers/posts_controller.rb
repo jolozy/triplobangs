@@ -58,6 +58,8 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
+    @activity = Activity.find(params[:id])
+    @activity.destroy
     flash[:success] = "Your post has been deleted!"
     redirect_to posts_path
   end

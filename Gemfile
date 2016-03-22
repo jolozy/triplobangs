@@ -29,6 +29,7 @@ gem 'bootstrap-sass', '~> 3.3.5'
 gem 'country_select', '~> 2.5', '>= 2.5.2'
 gem 'countries', :require => 'countries/global'
 gem 'devise'
+gem 'pg_search'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

@@ -9,11 +9,10 @@
 
   <p><%= link_to (image_tag @post.image.url(:medium)) %></p>
   <p>What went down: <%= @post.description%></p>
+
   <!-- cancel and delete functions -->
   <div>
-  <%= link_to "Back", posts_path %>
-  |
-  <%= link_to "Edit Post", edit_post_path(@post) %>
+  <%= link_to "Back", explore_path %>
   </div>
 
 </div>

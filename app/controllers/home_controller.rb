@@ -8,6 +8,13 @@ class HomeController < ApplicationController
   def explore
     @posts = Post.all
     @activity = Activity.all
+    @user = User.all
+  end
+
+  #/posts/id shows individual post
+  def show
+    @post = Post.find(params[:id])
+    @activity = Activity.find(params[:id]).name
   end
 
 end
