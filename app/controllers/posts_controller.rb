@@ -1,21 +1,26 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, :except => [:explore]
 
   #/posts: shows all posts that have been created on 1 page
   def index
     @posts = current_user.posts
+    # @posts = Post.all
     @activity = Activity.all
   end
 
   #/new: form that will accept user inputs
   def new
     @post = Post.new
-    @post.user_id = current_user.id
+    @activity = Activity.new
+    # @post.user_id = current_user.id
   end
   #create: clicking of upload button to allow creation of new entry. Redirects to new post
   def create
     @activity = params[:activities] #getting input from isolated form field
-    if @post = Post.create(post_params) #if object creation is true, go on to create Activity
+    my_params = post_params
+    my_params[:user_id] = current_user.id
+    if @post = Post.create(my_params) #if object creation is true, go on to create Activity
+
       @activities = Activity.create(:name => @activity, :post_id => @post.id)
       #when creating new Activity, pass 2 methods @activity and @post values into Activity model
 
@@ -37,11 +42,14 @@ class PostsController < ApplicationController
   #/posts/id/edit
   def edit
     @post = Post.find(params[:id])
+    @activity = Activity.find(params[:id])
   end
   #clicking button to update: actually perform an update that touches our database. It’s very similar to our create action but rather than creating, we’re UPDATING
   def update
     @post = Post.find(params[:id])
     @post.update(post_params)
+    @activity = Activity.find(params[:id])
+    @activity.update(name: params[:activities])
     flash[:success] = "Your post has been updated!"
     redirect_to(post_path(@post))
   end
