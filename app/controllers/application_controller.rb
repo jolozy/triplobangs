@@ -2,21 +2,17 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
+  before_action :configure_permitted_parameters, if: :devise_controller?
+  attr_accessor :login
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:username, :email, :password, :password_confirmation, :remember_me) }
+    devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:login, :username, :email, :password, :remember_me) }
+    devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:username, :email, :password, :password_confirmation, :current_password) }
+  end
 
   def after_sign_in_path_for(user)
     posts_path
   end
-
-  helper_method :get_current_user
-  #allows the current_user method to be accessed from the all the views (since its application_controller from which the specific controllers inherit the methods and attributes)
-
-  #cashe-ing the current_user so that dont have to make multiple database (very slow) queries for diff info
-  def get_current_user
-    @current_user ||= User.find(session[:user_id]) unless
-    session[:user_id].blank?
-    return @current_user
-  end
-  # ||= means check if @current_user already has a value, else give it the right hand side value
-
 
 end
