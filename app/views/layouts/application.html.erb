@@ -21,18 +21,36 @@
           <%= link_to "Home", root_path %>
         </div>
       </div>
+
       <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right">
-          <li>
-            <%= link_to "Login", '#' %>
-          </li>
-          <li>
-            <%= link_to "Register", '#' %>
-          </li>
-        </ul>
+        <% if !user_signed_in? %>
+            <div class="navbar-right">
+                <ul class="nav navbar-nav">
+                  <li class="<%= "active" if current_page?("/users/sign_in")  %>">
+                    <%= link_to "Sign In", new_user_session_path %>
+                  </li>
+                  <li>
+                    <%= link_to "Sign Up", new_user_registration_path %>
+                  </li>
+                </ul>
+            </div>
+        <% else %>
+            <div class="navbar-right">
+              <p class="navbar-text">
+                  Signed in as <%= current_user.email %>
+              </p>
+              <ul class="nav navbar-nav">
+                <li>
+                  <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+                </li>
+              </ul>
+            </div>
+        <% end %>
       </div>
+
     </div>
   </nav>
+
 
   <div class="container">
     <% flash.each do |name, msg| %>

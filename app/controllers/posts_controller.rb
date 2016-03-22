@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
-
+  before_action :authenticate_user!
+  
   #/posts: shows all posts that have been created on 1 page
   def index
     @posts = Post.all
