@@ -4,8 +4,9 @@
   <p>Date: <%= @post.created_at %></p>
   <p>Where: <%= @post.country %></p>
   <p>Amount spent: S$ <%= @post.budget %></p>
+  <p>Category: <%= @activity %></p>
+
   <p><%= link_to (image_tag @post.image.url(:medium)) %></p>
-  <p><%= @post.description %></p>
 
   <!-- cancel and delete functions -->
   <div>

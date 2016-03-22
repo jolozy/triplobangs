@@ -13,12 +13,14 @@
 
 ActiveRecord::Schema.define(version: 20160321021048) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "activities", force: :cascade do |t|
-    t.string   "type"
-    t.string   "description"
+    t.string   "name"
     t.integer  "post_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "posts", force: :cascade do |t|

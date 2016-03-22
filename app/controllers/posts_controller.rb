@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   #/posts: shows all posts that have been created on 1 page
   def index
     @posts = Post.all
+    @activity = Activity.all
   end
 
   #/new: form that will accept user inputs
@@ -11,7 +12,10 @@ class PostsController < ApplicationController
   end
   #create: clicking of upload button to allow creation of new entry. Redirects to new post
   def create
-    if @post = Post.create(post_params)
+    @activity = params[:activities] #getting input from isolated form field
+    if @post = Post.create(post_params) #if object creation is true, go on to create Activity
+      @activities = Activity.create(:name => @activity, :post_id => @post.id)
+      #when creating new Activity, pass 2 methods @activity and @post values into Activity model
       flash[:success] = "Your post has been created!"
       redirect_to posts_path
     else
@@ -24,6 +28,7 @@ class PostsController < ApplicationController
   #/posts/id shows individual post
   def show
     @post = Post.find(params[:id])
+    @activity = Activity.find(params[:id]).name
   end
 
   #/posts/id/edit
