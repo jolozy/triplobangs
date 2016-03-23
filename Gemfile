@@ -30,6 +30,7 @@ gem 'country_select', '~> 2.5', '>= 2.5.2'
 gem 'countries', :require => 'countries/global'
 gem 'devise'
 gem 'pg_search'
+gem 'acts_as_votable', '~> 0.10.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

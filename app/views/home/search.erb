@@ -1,6 +1,8 @@
 <h1>See what other users are doing in other countries:</h1>
 
-<%= form_tag(search_result_path, :method => "get", id: "search-form") do %>
-<%= text_field_tag :search, params[:search], placeholder: "Search by Country" %>
-<%= submit_tag "Search" %>
-<% end %>
+<div class = "explore search">
+  <%= form_tag(search_result_path, :method => "get", id: "search-form") do %>
+  <i class="fa fa-search"><%= text_field_tag :search, params[:search], placeholder: "Search by Country" %></i>
+  <%= submit_tag "Search" %>
+  <% end %>
+</div>

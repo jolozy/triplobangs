@@ -1,8 +1,8 @@
 <% @results.each do |result| %>
   <div align="row post">
-    <p>Contributor: <%= result.user.username %></p>
+    <p><i class="fa fa-user"></i> <%= result.user.username %></p>
     <p>Title: <%= result.title %></p>
-    <p>Date: <%= result.created_at.strftime("%d-%m-%Y %H:%M") %></p>
+    <p>Created: <%= time_ago_in_words(result.created_at) %> ago</p>
     <p>Where: <%= result.country_name %></p>
     <p>Amount spent: S$ <%= result.budget %></p>
 
@@ -10,6 +10,7 @@
   <!-- from #@activity, get the post belonging to it and return the name of activity.post_id.name -->
 
     <p><%= link_to (image_tag result.image.url(:medium)), post_path(result) %></p>
+    <p class = "like_globe"><%= link_to like_post_path(result), method: :put do %><i class="fa fa-globe fa-spin fa-2x"></i> <%= result.get_upvotes.size %><% end %> karma points</p>
 
     <p><a href="<%= post_path(result.id) %>">Read more</a></p>
 

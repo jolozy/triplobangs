@@ -2,18 +2,18 @@
 
 <% @posts.each do |post| %>
   <div class="row post">
-    <p>Contributor: <%= post.user.username %></p>
+    <p><i class="fa fa-user"></i> <%= post.user.username %></p>
     <p>Title: <%= post.title %></p>
-    <p>Date: <%= post.created_at.strftime("%d-%m-%Y %H:%M") %></p>
+    <p>Created: <%= time_ago_in_words(post.created_at) %> ago</p>
     <p>Where: <%= post.country_name %></p>
     <p>Amount spent: S$ <%= post.budget %></p>
 
     <p>Category: <%= @activity.find(post.id).name %></p>
   <!-- from #@activity, get the post belonging to it and return the name of activity.post_id.name -->
 
-    <p><%= link_to (image_tag post.image.url(:medium)), post_path(post) %></p>
-
-    <p><a href="<%= post_path(post.id) %>">Read more</a></p>
+  <p><%= link_to (image_tag post.image.url(:medium)), post_path(post) %></p>
+  <p class = "like_globe"><%= link_to like_post_path(post), method: :put do %><i class="fa fa-globe fa-spin fa-2x"></i> <%= post.get_upvotes.size %><% end %> karma points</p>
+  <p><a href="<%= post_path(post.id) %>">Read more</a></p>
   </div>
 
 <% end %>

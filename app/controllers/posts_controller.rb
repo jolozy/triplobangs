@@ -8,6 +8,13 @@ class PostsController < ApplicationController
     @activity = Activity.all
   end
 
+  #upvote
+  def upvote
+    @post = Post.find(params[:id])
+    @post.upvote_by current_user
+    redirect_to :back
+  end 
+
   #simple search
   def search
   end

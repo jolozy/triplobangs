@@ -1,6 +1,7 @@
 class Post < ActiveRecord::Base
   has_many :activities
   belongs_to :user
+  acts_as_votable
 
   include PgSearch
   pg_search_scope :search_country, :against => [:country]
