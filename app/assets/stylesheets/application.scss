@@ -14,13 +14,17 @@ a:hover {
   text-decoration: none;
   color: #f2cbbc;
 }
+hr {
+  color: #f2cbbc;
+  width: 100%;
+}
 
 .main-title {
-  font-size: 80px;
+  font-size: 60px;
   color: #f2efe8;
-  text-shadow: 0.5px 0.5px white;
-  padding-top: 200px;
-  padding-bottom: 50px;
+  text-shadow: 1px 1px white;
+  padding-top: 150px;
+  padding-bottom: 15px;
   // color: #e8edf3;
 }
 // .navbar-brand {
@@ -33,7 +37,10 @@ a:hover {
 #sign_in, #register, #signout, #home_button {
   color: white;
 }
-.string.optional, .password.optional, .password.required, .email.required, .string.required {
+#sign_in:hover, #register:hover, #signout:hover, #home_button:hover {
+  color: #f2cbbc;
+}
+.string.optional, .password.optional, .password.required, .email.required, .string.required, .country.optional, .integer.optional, .text.optional {
   margin: 5px;
 }
 
@@ -43,20 +50,22 @@ a:hover {
 }
 
 .landing_page_nav {
-  padding-top: 200px;
+  padding-top: 120px;
   padding-bottom: 20px;
+  font-weight: bold;
 }
 .landing_page_nav a {
   padding: 30px;
+  font-size: 25px;
 }
 
 .landing_page_text {
   padding: 50px;
 }
 
-#landing_page_instructions {
-  font-size: 10px;
-}
+// #landing_page_instructions {
+//   font-size: 10px;
+// }
 
 #bs-navbar-collapse-1 {
   background: #22264b;
@@ -106,9 +115,17 @@ a:hover {
 .form01 {
   padding: 10px;
 }
+#search-form {
+  text-align: center;
+  padding-top: 20px;
+}
 
 
 
+.all_headers {
+  text-align: center;
+  font-weight: bold;
+}
 
 .posts-wrapper {
   padding-top: 40px;
@@ -119,28 +136,43 @@ a:hover {
 
 .post {
   // background-color: #e8edf3;
-  border-color: #edeeee;
-  border-style: solid;
-  border-radius: 3px;
+  // border-color: #f2cbbc;
+  // border-style: dashed;
+  border-radius: 10px;
   border-width: 1px;
+  padding-bottom: 20px;
+  border-style: dashed;
+  border-color: #f2cbbc;
+  // margin-bottom: 50px;
+}
+.posts {
+  // background-color: #e8edf3;
+  // border-color: #edeeee;
+  // border-style: solid;
+  border-color: #f2cbbc;
+  border-radius: 10px;
+  border-width: 1px;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  border-style: dashed;
+  // background-color: #f2cbbc;
 }
 
 .post-head {
   padding: 14px 20px;
   font-size: 15px;
   line-height: 18px;
-  background-color: #334431;
+  border-color: #f2cbbc;
+  border-radius: 10px;
+  // background-color: #312c32;
+  // background-color: #334431;
+  background-color: #22264b;
   .thumbnail {}
   .name {
     display: block;
   }
-  color: #f2cbbc;
+  color: #f2efe8;
 }
-
-// .image {
-//   border-bottom: 1px solid #eeefef;
-//   border-top: 1px solid #eeefef;
-// }
 
 .caption, .description {
   padding: 24px 24px;
@@ -148,10 +180,23 @@ a:hover {
   line-height: 18px;
 }
 
-.like-globe {
-  color: #b56969;
-  padding: 14px 20px;
+.like_globe {
+  color: #22264b;
+  padding: 20px 20px;
   font-size: 15px;
   line-height: 18px;
-  font-size: 12px;
+}
+
+.read {
+  padding: 20px 20px;
+}
+.text-center {
+  padding-top: 20px;
+}
+
+
+
+#search_page {
+  padding-top: 150px;
+  padding-bottom: 100px;
 }

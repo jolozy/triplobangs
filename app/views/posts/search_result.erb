@@ -1,18 +1,27 @@
+<h1 class = "all_headers"><i class="fa fa-diamond"></i></i>  We found some gems</h1>
+
 <% @results.each do |result| %>
-  <div align="row post">
-    <p><i class="fa fa-user"></i> <%= result.user.username %></p>
-    <p>Title: <%= result.title %></p>
-    <p>Created: <%= time_ago_in_words(result.created_at) %> ago</p>
-    <p>Where: <%= result.country_name %></p>
-    <p>Amount spent: S$ <%= result.budget %></p>
+  <div class="posts-wrapper row">
+    <div class="posts">
 
-    <p>Category: <%= result.activities.first.name %></p>
-  <!-- from #@activity, get the post belonging to it and return the name of activity.post_id.name -->
+      <div class="post-head">
+        <p><i class="fa fa-user"></i> <strong><%= result.user.username %></strong></p>
+        <p>Title: <%= result.title %></p>
+        <p>Created <%= time_ago_in_words(result.created_at) %> ago</p>
+      </div>
 
-    <p><%= link_to (image_tag result.image.url(:medium)), post_path(result) %></p>
+      <div class="caption">
+        <p>This was in <i><%= result.country_name %></i></p>
+        <p>I spent S$ <i><%= result.budget %></i></p>
+        <p>Category: <i><%= result.activities.first.name %></i></p>
+      </div>
+
+    <p class="image center-block"><%= link_to (image_tag result.image.url(:medium)), post_path(result) %></p>
+
+    <p class="description">What went down: <%= result.description%></p>
+
     <p class = "like_globe"><%= link_to like_post_path(result), method: :put do %><i class="fa fa-globe fa-spin fa-2x"></i> <%= result.get_upvotes.size %><% end %> karma points</p>
 
-    <p><a href="<%= post_path(result.id) %>">Read more</a></p>
-
   </div>
+</div>
 <% end %>

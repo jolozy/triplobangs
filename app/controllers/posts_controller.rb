@@ -17,6 +17,7 @@ class PostsController < ApplicationController
 
   #simple search
   def search
+    
   end
 
   def search_result

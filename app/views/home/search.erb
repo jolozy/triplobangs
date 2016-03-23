@@ -1,8 +1,12 @@
-<h1>See what other users are doing in other countries:</h1>
+<div id = "search_page">
 
-<div class = "explore search">
-  <%= form_tag(search_result_path, :method => "get", id: "search-form") do %>
-  <i class="fa fa-search"><%= text_field_tag :search, params[:search], placeholder: "Search by Country" %></i>
-  <%= submit_tag "Search" %>
-  <% end %>
+  <h1 class = "all_headers"><i class="fa fa-plane"></i> People don't take trips. Trips take people...</h1>
+
+  <div class = "explore search">
+    <%= form_tag(search_result_path, :method => "get", id: "search-form") do %>
+    <i class="fa fa-search">  <%= text_field_tag :search, params[:search], placeholder: "Search by Country" %></i>
+    <%= submit_tag "Search" %>
+    <% end %>
+  </div>
+
 </div>

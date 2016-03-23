@@ -15,3 +15,7 @@
 # Activity.create(name: "Others", post_id: 5)
 
 User.create(email: "joanne@gmail.com", username: "jolozy", password: "12345678", password_confirmation: "12345678")
+User.create(email: "joshua@gmail.com", username: "joshm", password: "12345678", password_confirmation: "12345678")
+User.create(email: "jeremiah@gmail.com", username: "jalex", password: "12345678", password_confirmation: "12345678")
+User.create(email: "irvin@gmail.com", username: "lanbao", password: "12345678", password_confirmation: "12345678")
+User.create(email: "jesstern@gmail.com", username: "jessrays", password: "12345678", password_confirmation: "12345678")

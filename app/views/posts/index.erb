@@ -1,25 +1,36 @@
-<h1>MY LOBANGS</h1>
+<h1 class = "all_headers"><i class="fa fa-user-secret"></i> MY LOBANGS</h1>
 
 <% @posts.each do |post| %>
-  <div class="row post">
-    <p><i class="fa fa-user"></i> <%= post.user.username %></p>
-    <p>Title: <%= post.title %></p>
-    <p>Created: <%= time_ago_in_words(post.created_at) %> ago</p>
-    <p>Where: <%= post.country_name %></p>
-    <p>Amount spent: S$ <%= post.budget %></p>
+<div class="posts-wrapper row">
+  <div class="posts">
 
-      <% if post.activities.first
-            @a = post.activities.first.name
-          elsif
-            @a = 'None'
-          end
-      %>
-    <p>Category: <%= @a %></p>
-  <!-- from #@activity, get the post belonging to it and return the name of activity.post_id.name -->
 
-  <p><%= link_to (image_tag post.image.url(:medium)), post_path(post) %></p>
-  <p class = "like_globe"><%= link_to like_post_path(post), method: :put do %><i class="fa fa-globe fa-spin fa-2x"></i> <%= post.get_upvotes.size %><% end %> karma points</p>
-  <p><a href="<%= post_path(post.id) %>">Read more</a></p>
+    <div class="post-head">
+      <p><i class="fa fa-user"></i> <strong><%= post.user.username %></strong></p>
+      <p>Title: <%= post.title %></p>
+      <p>Created <i><%= time_ago_in_words(post.created_at) %> ago</i></p>
+    </div>
+
+    <div class="caption">
+      <p>This was in <i><%= post.country_name %></i></p>
+      <p>I spent S$ <i><%= post.budget %></i></p>
+
+        <% if post.activities.first
+              @a = post.activities.first.name
+            elsif
+              @a = 'None'
+            end
+        %>
+      <p>Category: <i><%= @a %></i></p>
+      <!-- from #@activity, get the post belonging to it and return the name of activity.post_id.name -->
+    </div>
+
+    <p class="image center-block"><%= link_to (image_tag post.image.url(:medium)), post_path(post) %></p>
+
+    <p class = "like_globe"><%= link_to like_post_path(post), method: :put do %><i class="fa fa-globe fa-spin fa-2x"></i> <%= post.get_upvotes.size %><% end %> karma points</p>
+
+    <p class = "read"><a href="<%= post_path(post.id) %>">(Read more...)</a></p>
+
   </div>
-
+</div>
 <% end %>

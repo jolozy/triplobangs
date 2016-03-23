@@ -9,23 +9,23 @@
     </div>
 
     <div class="caption">
-      <p>This was in <i><%= @post.country_name %></i></p>
-      <p>I spent S$ <i><%= @post.budget %></i></p>
-    <p>Category: <i><%= @activity.first.name %></i></p>
+      <p>This was in <strong><i><%= @post.country_name %></i></strong></p>
+      <p>I spent <strong>S$<i><%= @post.budget %></i></strong></p>
+      <p>Category: <strong><i><%= @activity.first.name %></i></strong></p>
   </div>
 
     <p class="image center-block"><%= link_to (image_tag @post.image.url(:medium)) %></p>
 
-    <p class="description">What went down: <%= @post.description%></p>
+    <p class="description"><i>What happened:</i> <%= @post.description%></p>
 
-    <p class = "like-globe"><%= link_to like_post_path(@post), method: :put do %><i class="fa fa-globe fa-spin fa-2x"></i> <%= @post.get_upvotes.size %><% end %> karma points</p>
-
-    <!-- back and edit functions -->
+    <p class = "like_globe"><%= link_to like_post_path(@post), method: :put do %><i class="fa fa-globe fa-spin fa-2x"></i> <%= @post.get_upvotes.size %><% end %> karma points</p>
 
   </div>
-</div>
+
 </div>
 
+<!-- back and edit functions -->
+</div>
 <div class="text-center">
 <%= link_to "Back", posts_path %>
 |
