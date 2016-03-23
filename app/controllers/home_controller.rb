@@ -14,7 +14,7 @@ class HomeController < ApplicationController
   #/posts/id shows individual post
   def show
     @post = Post.find(params[:id])
-    @activity = Activity.find(params[:id]).name
+    @activity = @post.activity
   end
 
 end

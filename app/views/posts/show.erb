@@ -1,23 +1,33 @@
 <div class="posts-wrapper row">
 
-  <p><i class="fa fa-user"></i> <%= @post.user.username %></p>
-  <p>Title: <%= @post.title %></p>
-  <p>Created: <%= time_ago_in_words(@post.created_at) %> ago</p>
-  <p>Where: <%= @post.country_name %></p>
-  <p>Amount spent: S$ <%= @post.budget %></p>
+  <div class="post">
 
-  <p>Category: <%= @activity %></p>
+    <div class="post-head">
+      <p><i class="fa fa-user"></i> <strong><%= @post.user.username %></strong></p>
+      <p>Title: <%= @post.title %></p>
+      <p>Created <i><%= time_ago_in_words(@post.created_at) %> ago</i></p>
+    </div>
 
-  <p><%= link_to (image_tag @post.image.url(:medium)) %></p>
-  <p>What went down: <%= @post.description%></p>
-
-  <p class = "like_globe"><%= link_to like_post_path(@post), method: :put do %><i class="fa fa-globe fa-spin fa-2x"></i> <%= @post.get_upvotes.size %><% end %> karma points</p>
-
-  <!-- back and edit functions -->
-  <div>
-  <%= link_to "Back", posts_path %>
-  |
-  <%= link_to "Edit Post", edit_post_path(@post) %>
+    <div class="caption">
+      <p>This was in <i><%= @post.country_name %></i></p>
+      <p>I spent S$ <i><%= @post.budget %></i></p>
+    <p>Category: <i><%= @activity.first.name %></i></p>
   </div>
 
+    <p class="image center-block"><%= link_to (image_tag @post.image.url(:medium)) %></p>
+
+    <p class="description">What went down: <%= @post.description%></p>
+
+    <p class = "like-globe"><%= link_to like_post_path(@post), method: :put do %><i class="fa fa-globe fa-spin fa-2x"></i> <%= @post.get_upvotes.size %><% end %> karma points</p>
+
+    <!-- back and edit functions -->
+
+  </div>
+</div>
+</div>
+
+<div class="text-center">
+<%= link_to "Back", posts_path %>
+|
+<%= link_to "Edit Post", edit_post_path(@post) %>
 </div>

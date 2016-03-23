@@ -9,7 +9,7 @@
       <p>Where: <%= post.country_name %></p>
       <p>Amount spent: S$ <%= post.budget %></p>
 
-      <p>Category: <%= @activity.find(post.id).name %></p>
+      <p>Category: <%= Activity.find_by(post_id: post.id).name %></p>
     <!-- from #@activity, get the post belonging to it and return the name of activity.post_id.name -->
 
       <p><%= link_to (image_tag post.image.url(:medium)), post_path(post) %></p>

@@ -13,7 +13,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.upvote_by current_user
     redirect_to :back
-  end 
+  end
 
   #simple search
   def search
@@ -51,7 +51,7 @@ class PostsController < ApplicationController
   #/posts/id shows individual post
   def show
     @post = Post.find(params[:id])
-    @activity = Activity.find(params[:id]).name
+    @activity = @post.activities
   end
 
   #/posts/id/edit

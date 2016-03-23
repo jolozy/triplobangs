@@ -19,7 +19,7 @@
           <span class="icon-bar"></span>
         </button>
         <div class="navbar-brand">
-          <%= link_to "Home", root_path %>
+          <%= link_to "Home", root_path, :id => "home_button"%>
         </div>
       </div>
 
@@ -28,10 +28,10 @@
             <div class="navbar-right">
                 <ul class="nav navbar-nav">
                   <li class="<%= "active" if current_page?("/users/sign_in")  %>">
-                    <%= link_to "Sign In", new_user_session_path %>
+                    <%= link_to "Sign In", new_user_session_path, :id => "sign_in"%>
                   </li>
                   <li>
-                    <%= link_to "Register", new_user_registration_path %>
+                    <%= link_to "Register", new_user_registration_path, :id => "register" %>
                   </li>
                 </ul>
             </div>
@@ -42,7 +42,7 @@
               </p>
               <ul class="nav navbar-nav">
                 <li>
-                  <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+                  <%= link_to "Sign out", destroy_user_session_path, method: :delete, :id => "signout" %>
                 </li>
               </ul>
             </div>

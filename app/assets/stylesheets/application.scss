@@ -4,10 +4,154 @@
 body {
   font-family: Avenir;
   padding: 50px;
+  background: #e6af4b;
+}
+a {
+  text-decoration: none;
+  color: #22264b;
+}
+a:hover {
+  text-decoration: none;
+  color: #f2cbbc;
 }
 
-.row {
+.main-title {
+  font-size: 80px;
+  color: #f2efe8;
+  text-shadow: 0.5px 0.5px white;
+  padding-top: 200px;
+  padding-bottom: 50px;
+  // color: #e8edf3;
+}
+// .navbar-brand {
+//   color: #f2cbbc;
+// }
+
+.nav_bar_buttons {
+  color: white;
+}
+#sign_in, #register, #signout, #home_button {
+  color: white;
+}
+.string.optional, .password.optional, .password.required, .email.required, .string.required {
+  margin: 5px;
+}
+
+
+.home_landing {
+  text-align: center;
+}
+
+.landing_page_nav {
+  padding-top: 200px;
+  padding-bottom: 20px;
+}
+.landing_page_nav a {
+  padding: 30px;
+}
+
+.landing_page_text {
   padding: 50px;
-  border: 5px solid #d3d3d3;
-  border-style: double;
+}
+
+#landing_page_instructions {
+  font-size: 10px;
+}
+
+#bs-navbar-collapse-1 {
+  background: #22264b;
+}
+
+
+
+
+
+//
+// .navbar-brand .a {
+//   color: #f2cbbc;
+//   font-weight: bold;
+// }
+// .navbar-default .navbar-collapse, .navbar-default .navbar-form {
+//   background: #22264b;
+//   border-color: inherit;
+// }
+
+// .navbar-default .navbar-nav > li > a, .navbar-default .navbar-text {
+//   color: #f2cbbc;
+// }
+
+// .row {
+//   padding: 50px;
+//   border: 5px solid #d3d3d3;
+//   border-style: double;
+// }
+
+// .row {
+//   // background-color: #fff;
+//   border-color: #edeeee;
+//   border-style: solid;
+//   border-radius: 3px;
+//   border-width: 1px;
+//   margin-bottom: 60px;
+// }
+
+.form-wrapper {
+  width: 60%;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 40px;
+  border: 1px solid #eeefef;
+  border-radius: 3px;
+}
+.form01 {
+  padding: 10px;
+}
+
+
+
+
+.posts-wrapper {
+  padding-top: 40px;
+  margin: 0 auto;
+  max-width: 642px;
+  width: 100%;
+}
+
+.post {
+  // background-color: #e8edf3;
+  border-color: #edeeee;
+  border-style: solid;
+  border-radius: 3px;
+  border-width: 1px;
+}
+
+.post-head {
+  padding: 14px 20px;
+  font-size: 15px;
+  line-height: 18px;
+  background-color: #334431;
+  .thumbnail {}
+  .name {
+    display: block;
+  }
+  color: #f2cbbc;
+}
+
+// .image {
+//   border-bottom: 1px solid #eeefef;
+//   border-top: 1px solid #eeefef;
+// }
+
+.caption, .description {
+  padding: 24px 24px;
+  font-size: 15px;
+  line-height: 18px;
+}
+
+.like-globe {
+  color: #b56969;
+  padding: 14px 20px;
+  font-size: 15px;
+  line-height: 18px;
+  font-size: 12px;
 }

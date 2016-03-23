@@ -6,7 +6,7 @@
     <p>Where: <%= result.country_name %></p>
     <p>Amount spent: S$ <%= result.budget %></p>
 
-    <p>Category: <%= result.activities.name %></p>
+    <p>Category: <%= result.activities.first.name %></p>
   <!-- from #@activity, get the post belonging to it and return the name of activity.post_id.name -->
 
     <p><%= link_to (image_tag result.image.url(:medium)), post_path(result) %></p>
